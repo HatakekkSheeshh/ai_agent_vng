@@ -52,3 +52,27 @@ While not done:
     - Độ nhạy về chi phí và độ trễ
     - Nhu cầu sử dụng các tools
     - Khả năng kiểm chứng đầu ra
+
+```mermaid
+flowchart TD
+    A[Task description] --> B[LLM lightweight classifier]
+
+    B --> C[Đánh giá các tiêu chí]
+    C --> C1[Mức độ rõ ràng của quy tắc]
+    C --> C2[Mức độ mơ hồ của đầu vào]
+    C --> C3[Nhu cầu suy luận nhiều bước]
+    C --> C4[Độ nhạy về chi phí và độ trễ]
+    C --> C5[Nhu cầu sử dụng tools]
+    C --> C6[Khả năng kiểm chứng đầu ra]
+
+    C1 --> D[Tính điểm Agent / Workflow]
+    C2 --> D
+    C3 --> D
+    C4 --> D
+    C5 --> D
+    C6 --> D
+
+    D --> E{Score Agent > Score Workflow?}
+    E -- Có --> F[Dùng AI Agent]
+    E -- Không --> G[Dùng Workflow cố định / Rule-based]
+```
